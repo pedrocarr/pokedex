@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PokemonService } from 'src/_services/pokemon.service';
 import { Pokemon } from '../../_model/Pokemon';
 import { Type } from '../../_model/Type';
 
@@ -19,6 +20,10 @@ export class PokemonListComponent {
       ],
     },
   ];
+  constructor(
+    public pokemonService: PokemonService
+  ) {
+  }
 }
 
 
