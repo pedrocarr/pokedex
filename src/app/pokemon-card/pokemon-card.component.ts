@@ -1,22 +1,16 @@
 import { Component, Input } from '@angular/core';
-import { Pokemon } from 'src/_model/Pokemon';
+import { getPokemonImage, getPokemonNumber, Pokemon } from '../../_model/Pokemon';
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
-  styleUrls: ['./pokemon-card.component.sass']
+  styleUrls: ['./pokemon-card.component.sass'],
 })
 export class PokemonCardComponent {
   @Input()
   public pokemon: Pokemon;
 
-  public leadingZero(str: string | number, size: number = 3): string {
-    let s = String(str);
+  public getPokemonImage = getPokemonImage;
 
-    while (s.length < (size || 2)) {
-      s = '0' + s;
-    }
-
-    return s;
-  }
+  public getPokemonNumber = getPokemonNumber;
 }
